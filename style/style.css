@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*          Diseño de la sección navbar                       */
+
+.custom-navbar{
+    background-color:#0d1b2a;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    margin-left: 80px;
+    color: white;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+/*            Seccion del section */
+
+/* Estilos generales para la sección */
+.section {
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    background-color: #f4f6f8;
+    padding: 60px 0;
+}
+
+.img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.card-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;      /* Hace la imagen circular */
+    object-fit: cover;       /* Recorta y ajusta la imagen */
+    border: 2px solid #ccc;  /* Opcional: borde decorativo */
+}
+
+.custom-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+.leer-btn {
+    margin-top: auto;
+    border-color: lightgray;
+    color: black;
+}
+
+.leer-btn:hover{
+    color: black;
+    background-color: white;
+    border-color:lightgray;
+}
+
+.leer-btn:active{
+    color: white !important;
+    background-color: #2c3e50 !important;
+    border-color:lightgray !important;
+}
+
+.contact {
+    margin-top: 40px;  /* o el valor que quieras */
+    display: flex;
+    flex-direction: column; /* <-- esto alinea los inputs como Bootstrap espera */
+    gap: 20px;              /* espacio entre campos si quieres */
+    padding: 40px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.submit{
+    margin-top: auto;
+    width: 70px;
+    height: 40px;
+    background-color: white;
+    border-color: lightgray;
+    color: black;
+}
+
+.submit:hover{
+    color: black;
+    background-color: white;
+    border-color:lightgray;
+}
+
+.submit:active {
+    color: white !important;
+    background-color: #2c3e50 !important;
+    border-color: lightgray !important;
+}
+
+
+
+
+/*           Seccion del Footer   */
+
+.footer-custom {
+    background-color: #2c3e50;
+    padding: 40px 0;
+}
+
+.footer-content {
+    gap: 30px;
+}
+
+.footer-custom .social-icons i {
+    color: white; /* Gris oscuro */
+    transition: color 0.3s ease;
+}
+
+.footer-custom .social-icons h5 {
+    color: white;
+}
+
+.footer-content .enlace-info a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-content .enlace-info h5{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-content .contacto-info a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-content .contacto-info h5{
+    text-decoration: none;
+    color: white;
+}
+
+.sobre-nosotros h5{
+    color: white;
+}
+
+.sobre-nosotros p{
+    color: white;
+}
