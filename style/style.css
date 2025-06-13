@@ -29,6 +29,10 @@
     color: white;
 }
 
+.navbar-toggler{
+    background-color: lightgray;
+}
+
 /*            Seccion del section */
 
 /* Estilos generales para la sección */
