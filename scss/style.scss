@@ -1,0 +1,269 @@
+// =====================
+// Variables
+// =====================
+
+$color-oscuro: #0d1b2a;
+$color-footer: #2c3e50;
+$color-fondo: #f4f6f8;
+$color-blanco: white;
+$color-negro: black;
+$color-gris: lightgray;
+$color-texto: #333333;
+
+// =====================
+// Placeholder para botones
+// =====================
+
+%btn-base {
+    border: 1px solid $color-gris;
+    background-color: $color-blanco;
+    color: $color-negro;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+// =====================
+// Mixins
+// =====================
+
+@mixin transition($args...) {
+    transition: $args;
+}
+
+@mixin circular-img($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+// =====================
+// Animaciones
+// =====================
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// =====================
+// Reset
+// =====================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// =====================
+// Navbar
+// =====================
+
+.custom-navbar {
+    background-color: $color-oscuro;
+
+    .navbar-brand {
+        font-size: 30px;
+        margin-left: 80px;
+        color: $color-blanco;
+
+        &:hover {
+            color: $color-blanco;
+        }
+    }
+
+    .nav-link {
+        color: $color-blanco;
+
+        &:hover {
+            color: $color-blanco;
+        }
+    }
+
+    .navbar-toggler {
+        background-color: $color-gris;
+    }
+}
+
+// =====================
+// Section
+// =====================
+
+.section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $color-texto;
+    background-color: $color-fondo;
+    padding: 60px 0;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.titulo-animado {
+    animation: slideFadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+    img {
+        @include circular-img(100px);
+        @include transition(transform 0.3s ease);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// =====================
+// Cards personalizadas y animaciones
+// =====================
+
+.custom-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $color-blanco;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    @include transition(transform 0.3s ease, box-shadow 0.3s ease);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Animación de entrada para cards con clase card-animada
+
+.card-animada {
+    opacity: 0;
+    animation: slideFadeIn 0.8s ease-out forwards;
+}
+
+.card-animada:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card-animada:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card-animada:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card-animada:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+// =====================
+// Botones reutilizando @extend
+// =====================
+
+.leer-btn,
+.submit {
+    @extend %btn-base;
+
+    &:hover {
+        background-color: $color-blanco;
+        color: $color-negro;
+    }
+
+    &:active {
+        background-color: $color-footer !important;
+        color: $color-blanco !important;
+        border-color: $color-gris !important;
+    }
+}
+
+// =====================
+// Contacto
+// =====================
+
+.contact {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border: 1px solid $color-gris;
+    border-radius: 8px;
+    width: calc(100% - 80px);
+}
+
+// =====================
+// Footer
+// =====================
+
+.footer-custom {
+    background-color: $color-footer;
+    padding: 40px 0;
+
+    .footer-content {
+        gap: 30px;
+
+        .enlace-info,
+        .contacto-info {
+
+            a,
+            h5 {
+                text-decoration: none;
+                color: $color-blanco;
+            }
+        }
+    }
+
+    .social-icons {
+        i {
+            color: $color-blanco;
+            @include transition(color 0.3s ease);
+        }
+
+        h5 {
+            color: $color-blanco;
+        }
+    }
+
+    .sobre-nosotros {
+
+        h5,
+        p {
+            color: $color-blanco;
+        }
+    }
+}
